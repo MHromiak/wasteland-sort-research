@@ -13,7 +13,6 @@ wasteland_sort
     :returns: None. Array is sorted pseudo in-place. Original integers are overwritten
 
 
-
 .. py:function:: find_extremes(landmarks: list) -> Union(int, int)
 
     Helper function to find the maximum and minimum elements of a list ins O(n) time
