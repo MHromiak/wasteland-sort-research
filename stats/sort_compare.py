@@ -4,7 +4,7 @@ sys.path.insert(0, myPath + '/../')
 from other_sorts import heapsort as h, merge as m, quicksort as q, timsort as t, radix as r
 
 from wasteland_sort import wasteland_sort as ws
-from stats import stats #visualize
+from stats import stats, visualize
 from typing import List
 from pprint import pprint
 
@@ -22,10 +22,6 @@ def compare():
     except:
         pass
     os.mkdir(folder)
-    # for f in range(len(data_f)):
-    #     visualize.visualize(data_f[f], f, True)
-    # for i in range(len(data_i)):
-    #     visualize.visualize(data_f[i], i, False)
     
     floats = []
     ints = []
@@ -36,15 +32,18 @@ def compare():
     ints.append(heap(copy.copy(i_vals)))
     ints.append(merge(copy.copy(i_vals)))
     ints.append(quicksort(copy.copy(i_vals)))
-    ints.append(radix(copy.copy(i_vals)))
     ints.append(timsort(copy.copy(i_vals)))
     ints.append(wasteland(copy.copy(i_vals)))
-    # print("done with ints")
 
-    # visualize.plot_times([labels, floats])
-    # visualize.plot_times(ints)
-    # print(floats)
-    pprint(ints)
+    visualize.plot_times(ints)
+
+    ints.append(radix(copy.copy(i_vals)))
+
+    results = open("sorting_results.txt", "w")
+    for item in ints:
+        results.write(str(item) + "\n")
+    results.close()
+
 
 
 def heap(data: List[list]) -> float:
@@ -57,7 +56,7 @@ def heap(data: List[list]) -> float:
             end = time.time()
             set_times.append(end - start)
         times.append(sum(set_times) / len(set_times))
-    print(times, "heap")
+    print("heapsort sorting complete")
     return (times, "heap")
 
 def merge(data: List[list]) -> float:
@@ -70,7 +69,7 @@ def merge(data: List[list]) -> float:
             end = time.time()
             set_times.append(end - start)
         times.append(sum(set_times) / len(set_times))
-    print(times, "merge")
+    print("mergesort sorting complete")
     return (times, "merge")
 
 def quicksort(data: List[list]) -> float:
@@ -83,7 +82,7 @@ def quicksort(data: List[list]) -> float:
             end = time.time()
             set_times.append(end - start)
         times.append(sum(set_times) / len(set_times))
-    print(times, "quick")
+    print("quicksort sorting complete")
     return (times, "quicksort")
 
 def radix(data: List[list]) -> float:
@@ -91,13 +90,12 @@ def radix(data: List[list]) -> float:
     for dset in data:
         set_times = []
         for d in dset:
-            print(len(d))
             start = time.time()
             r.radixSort(d)
             end = time.time()
             set_times.append(end - start)
         times.append(sum(set_times) / len(set_times))
-    print(times, "radix")
+    print("radix sorting complete")
     return (times, "radix")
 
 
@@ -118,7 +116,7 @@ def timsort(data: List[list]) -> float:
             times.append(sum(set_times) / len(set_times))
         except:
             times.append(None)
-    print(times, "timsort")
+    print("timsort sorting complete")
     return (times, "timsort")
 
 def wasteland(data: List[list]) -> float:
@@ -131,7 +129,7 @@ def wasteland(data: List[list]) -> float:
             end = time.time()
             set_times.append(end - start)
         times.append(sum(set_times) / len(set_times))
-    print(times, "wasteland")
+    print("wasteland sorting complete")
     return (times, "wasteland")
 
 def data_from_stats(data: List[list]) -> List[list]:
