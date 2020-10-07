@@ -17,19 +17,18 @@ def wasteland_sort(landmarks: list, reverse: bool) -> list:
     -------
     Pseudo in-place landmarks array. Each value is actually replaced with another integer.
     """
-    if landmarks == [] or len(landmarks) == 1:
+    if len(landmarks) < 1:
         return landmarks
     least, most = find_extremes(landmarks)
 
     wasteland: list = [0] * (most - least + 1)
-
+    index : int = 0
     for value in landmarks:
         index = value - least
         wasteland[index] += 1
 
-    index: int = 0
-    num_sorted: int = 0 
-    done = False
+    index = 0
+
 
     for x in range(len(wasteland)):
         item: int = wasteland[x]
@@ -38,13 +37,9 @@ def wasteland_sort(landmarks: list, reverse: bool) -> list:
             if reverse:   
                 landmarks[(len(landmarks) - 1) - index] = least + x
             else:
-                landmarks[index] = least + x
-            num_sorted += 1
-            if num_sorted == len(landmarks):
-                done = True
+                landmarks[index] = least + x   
             index += 1
-        if done:
-            break
+        
     
 
 
@@ -66,11 +61,11 @@ def find_extremes(landmarks: list) -> Union[int, int]:
     if landmarks == []:
         raise ValueError("Could not find maxima of the list")
 
-    most, least = None, None
+    most, least = landmarks[0], landmarks[0]
 
     for val in landmarks:
-        if most == None or val > most:
+        if val > most:
             most = val
-        if least == None or val < least:
+        if val < least:
             least = val
     return least, most

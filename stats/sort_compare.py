@@ -10,12 +10,12 @@ from pprint import pprint
 
 
 def compare():
-    info = [(100, 1000), (1000, 10000), (2000, 20000), (2, 20000)]
+    info = [(100, 1000), (1000, 10000), (4000, 40000), (2, 20000), (100000, 20000)]
     data_i = [stats.generate_data(info) for x in range(10)]
     
     
     i_vals = data_from_stats(data_i)
-
+    
     folder = myPath + "/plots"
     try:
         shutil.rmtree(folder)
@@ -28,7 +28,6 @@ def compare():
     print("starting sort")
     
     
-    
     ints.append(heap(copy.copy(i_vals)))
     ints.append(merge(copy.copy(i_vals)))
     ints.append(quicksort(copy.copy(i_vals)))
@@ -36,7 +35,7 @@ def compare():
     ints.append(wasteland(copy.copy(i_vals)))
 
     visualize.plot_times(ints)
-
+    ints.insert(0, ("Small", "Medium", "Large", "Close", "Far", "Sort name"))
     ints.append(radix(copy.copy(i_vals)))
 
     results = open("sorting_results.txt", "w")
@@ -134,12 +133,12 @@ def wasteland(data: List[list]) -> float:
 
 def data_from_stats(data: List[list]) -> List[list]:
     keepr = 0
-    extracted = [[], [], [], []]
+    extracted = [[], [], [], [], []]
     for sample in data:
         for d in sample:
             extracted[keepr].append(d)
             keepr += 1
-            keepr %= 4
+            keepr %= 5
     return extracted
 
 

@@ -10,6 +10,10 @@ Welcome to wasteland_sort's documentation!
    :maxdepth: 2
    :caption: Contents:
 
+   other_sorts
+   sort_compare
+   visualize
+   stats
    wasteland_sort
 
 Indices and tables
