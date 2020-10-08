@@ -1,0 +1,14 @@
+Metadata-Version: 2.1
+Name: wasteland-sort
+Version: 0.0.1
+Summary: Draft version of the sort with testing and comparison
+Home-page: https://github.com/MHromiak/wasteland_sort.git
+Author: Markian Hromiak
+Author-email: mhromiak3@gatech.edu
+License: UNKNOWN
+Description: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.8.2
+Description-Content-Type: text/markdown

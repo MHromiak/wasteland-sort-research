@@ -15,6 +15,7 @@
     <script src="_static/language_data.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="visualize" href="visualize.html" />
     <link rel="prev" title="other_sorts" href="other_sorts.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
@@ -34,11 +35,120 @@
             
   <div class="section" id="sort-compare">
 <h1>sort_compare<a class="headerlink" href="#sort-compare" title="Permalink to this headline">¶</a></h1>
-<dl class="simple">
+<dl>
 <dt>A data minipulation file which times each sorting algorithm on ten sorts of randomly generated data and</dt><dd><p>graphs the resulting times for ease of comparison. Note that radix sort is kept from the graphs as the time disparity
 caused the other bars to be invisibly small. The full raw data is shown in stats/sorting_results.txt. Graphs are stored in stats/plots</p>
+<dl class="py function">
+<dt id="compare">
+<code class="sig-name descname">compare</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#compare" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compares all sorts in oter_sorts with wasteland_sort</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>None. Puts plots in stats/plots and running time averages in ./sorting_results.txt</p>
 </dd>
 </dl>
+</dd></dl>
+
+</dd>
+</dl>
+<dl class="py function">
+<dt id="heap">
+<code class="sig-name descname">heap</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span><span class="p">:</span> <span class="n">List<span class="p">[</span>list<span class="p">]</span></span></em><span class="sig-paren">)</span> &#x2192; List<span class="p">[</span>float<span class="p">]</span><a class="headerlink" href="#heap" title="Permalink to this definition">¶</a></dt>
+<dd><p>Runs timing trials for Heapsort over ‘data’.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>data</strong> – List of data to be sorted</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>List of average sorting times for each set of data</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="merge">
+<code class="sig-name descname">merge</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span><span class="p">:</span> <span class="n">List<span class="p">[</span>list<span class="p">]</span></span></em><span class="sig-paren">)</span> &#x2192; List<span class="p">[</span>float<span class="p">]</span><a class="headerlink" href="#merge" title="Permalink to this definition">¶</a></dt>
+<dd><p>Runs timing trials for Mergesort over ‘data’.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>data</strong> – List of data to be sorted</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>List of average sorting times for each set of data</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="quicksort">
+<code class="sig-name descname">quicksort</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span><span class="p">:</span> <span class="n">List<span class="p">[</span>list<span class="p">]</span></span></em><span class="sig-paren">)</span> &#x2192; List<span class="p">[</span>float<span class="p">]</span><a class="headerlink" href="#quicksort" title="Permalink to this definition">¶</a></dt>
+<dd><p>Runs timing trials for Quicksort over ‘data’.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>data</strong> – List of data to be sorted</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>List of average sorting times for each set of data</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="radix">
+<code class="sig-name descname">radix</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span><span class="p">:</span> <span class="n">List<span class="p">[</span>list<span class="p">]</span></span></em><span class="sig-paren">)</span> &#x2192; List<span class="p">[</span>float<span class="p">]</span><a class="headerlink" href="#radix" title="Permalink to this definition">¶</a></dt>
+<dd><p>Runs timing trials for Radix sort over ‘data’.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>data</strong> – List of data to be sorted</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>List of average sorting times for each set of data</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="timsort">
+<code class="sig-name descname">timsort</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span><span class="p">:</span> <span class="n">List<span class="p">[</span>list<span class="p">]</span></span></em><span class="sig-paren">)</span> &#x2192; List<span class="p">[</span>float<span class="p">]</span><a class="headerlink" href="#timsort" title="Permalink to this definition">¶</a></dt>
+<dd><p>Runs timing trials for Timsort over ‘data’.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>data</strong> – List of data to be sorted</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>List of average sorting times for each set of data</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="wasteland">
+<code class="sig-name descname">wasteland</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span><span class="p">:</span> <span class="n">List<span class="p">[</span>list<span class="p">]</span></span></em><span class="sig-paren">)</span> &#x2192; List<span class="p">[</span>float<span class="p">]</span><a class="headerlink" href="#wasteland" title="Permalink to this definition">¶</a></dt>
+<dd><p>Runs timing trials for Wasteland sort over ‘data’.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>data</strong> – List of data to be sorted</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>List of average sorting times for each set of data</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="data_from_stats">
+<code class="sig-name descname">data_from_stats</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span><span class="p">:</span> <span class="n">List<span class="p">[</span>list<span class="p">]</span></span></em><span class="sig-paren">)</span> &#x2192; List<span class="p">[</span>list<span class="p">]</span><a class="headerlink" href="#data_from_stats" title="Permalink to this definition">¶</a></dt>
+<dd><p>Takes a list of all samples generated in compare() and separates them into data sets</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>data</strong> – List of data to be sorted</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>List of lists of integers. Each list of lists represents a set of data (e.g. small, medium, large)</p>
+</dd>
+</dl>
+</dd></dl>
+
 </div>
 
 
@@ -60,9 +170,11 @@ caused the other bars to be invisibly small. The full raw data is shown in stats
 <h3>Navigation</h3>
 <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="wasteland_sort.html">wasteland_sort</a></li>
 <li class="toctree-l1"><a class="reference internal" href="other_sorts.html">other_sorts</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">sort_compare</a></li>
+<li class="toctree-l1"><a class="reference internal" href="visualize.html">visualize</a></li>
+<li class="toctree-l1"><a class="reference internal" href="stats.html">stats</a></li>
+<li class="toctree-l1"><a class="reference internal" href="wasteland_sort.html">wasteland_sort</a></li>
 </ul>
 
 <div class="relations">
@@ -70,6 +182,7 @@ caused the other bars to be invisibly small. The full raw data is shown in stats
 <ul>
   <li><a href="index.html">Documentation overview</a><ul>
       <li>Previous: <a href="other_sorts.html" title="previous chapter">other_sorts</a></li>
+      <li>Next: <a href="visualize.html" title="next chapter">visualize</a></li>
   </ul></li>
 </ul>
 </div>
